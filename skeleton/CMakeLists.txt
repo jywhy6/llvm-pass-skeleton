@@ -12,6 +12,8 @@ set_target_properties(SkeletonPass PROPERTIES
     COMPILE_FLAGS "-fno-rtti"
 )
 
+target_link_options(SkeletonPass PRIVATE "LINKER:-z,nodelete")
+
 # Get proper shared-library behavior (where symbols are not necessarily
 # resolved when the shared library is linked) on OS X.
 if(APPLE)
